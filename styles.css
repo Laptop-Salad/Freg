@@ -1,0 +1,249 @@
+:root {
+    --freg: #8AB29B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-flow: column;  
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background-image: url(assets/def-noise.png);
+    font-family: 'Inter', sans-serif;
+}
+
+.special {
+    font-family: 'Fascinate', system-ui;
+    box-sizing: border-box;
+}
+
+/* Padding */
+header, main {
+    padding: 20px 80px;
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template: 1fr / 1fr 1fr;
+    border-bottom: 2px solid black;
+    flex: 0 1 auto;
+}
+
+header img {
+    width: 100px;
+    cursor: pointer;
+}
+
+header p {
+    font-size: 48px;
+}
+
+header #logoCont {
+    display: flex;
+    align-items: center;
+}
+
+header #logoCont p {
+    margin: 0 20px;
+}
+
+header .buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.buttons a {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+}
+
+header .hamburger {
+    display: none;
+}
+
+/* Menu for devices below 600px width */
+#menu {
+    display: none;
+    flex-direction: column;
+    padding: 20px 5px;
+    width: 100%;
+    height: 100vh;
+    background-color: #F1E4C3;
+    box-sizing: border-box;
+}
+
+#menu .buttons > * {
+    margin: 20px;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8AB29B;
+    margin: 0 20px;
+    height: 50px;
+    padding: 5px;
+    border: 2px solid black;
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    cursor: pointer;
+}
+
+.link-btn:hover {
+    background-color: aliceblue;
+}
+
+#photoGrid {
+    display: grid;
+    grid-auto-rows: 200px;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: 20px;
+}
+
+/* Image update */
+.update {
+    border: 2px solid black;
+    overflow: hidden;
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+}
+
+.update-img {
+    width: 100%;
+    height: 100%;
+}
+
+.update-desc {
+    height: 20%;
+    background-color: #F1E4C3;
+    padding: 5px;
+}
+
+/* Login/signup box */
+#login, #signup {
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 40vh;
+    background-color: #F1E4C3;
+    border: 2px solid black;
+    text-align: center;
+    padding: 5px;
+    -webkit-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+}
+
+.inputs form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.inputs form div {
+    display: flex;
+    margin: 5px 0;
+}
+
+.inputs label {
+    display: block;
+    width: 100px;
+}
+
+.inputs input[type="text"],
+.inputs input[type="password"] {
+    display: block;
+    height: 20px;
+    outline: none;
+    border: 2px solid black;
+    background-color: #FFFFEC;
+}
+
+.submit {
+    margin: 20px 0;
+}
+
+/* Media queries */
+@media only screen and (max-width: 800px) {
+    main, header {
+        padding: 20px 20px;
+    }
+
+    .inputs {
+        width: 50vw;
+        height: 50vh;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    header, main {
+        padding: 5px;
+    }
+
+    #photoGrid {
+        grid-auto-rows: 100vh;
+        grid-template-columns: 1fr;
+    }
+
+    .update-img {
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        transition: box-shadow 1s;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }  
+        
+    header .buttons {
+        display: none;
+    }
+
+    header .hamburger {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .inputs {
+        width: 80vw;
+        height: 80vh;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    header img {
+        width: 50px;
+        cursor: pointer;
+    }
+    
+    header p {
+        font-size: 24px;
+    }    
+
+    .inputs {
+        width: 95vw;
+        height: 80vh;
+    }
+}
+

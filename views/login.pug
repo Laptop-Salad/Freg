@@ -1,0 +1,15 @@
+extends index.pug
+
+block content 
+    main(id="login")
+        div(class="inputs")    
+            h1 = "Login"
+            form(action="/login", method="post") 
+                div
+                    label(for="username") = "Username"
+                    input(id="username" name="username" type="text")
+                div
+                    label(for="password") = "Password"
+                    input(id="password" name="password" type="password") 
+                
+                input(type="submit" class="link-btn submit" value="Login")
